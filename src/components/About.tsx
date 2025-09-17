@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { motion } from "framer-motion"
 import { Download, MapPin, Calendar, Briefcase } from 'lucide-react'
 import { Button } from './ui/button'
 import { Card, CardContent } from './ui/card'
@@ -30,13 +30,7 @@ export function About() {
       description: 'Completed a professional internship under the guidance of Kotlin vai, developing Flutter and Firebase mobile applications.',
       type: 'work'
     },
-    // {
-    //   year: '2022',
-    //   title: 'Bachelor in Computer Science',
-    //   company: 'Tech University',
-    //   description: 'Graduated with honors, specialized in mobile app development and software engineering.',
-    //   type: 'education'
-    // },
+    
     {
       year: '2020',
       title: 'Started Diploma Engineering',
@@ -44,11 +38,10 @@ export function About() {
       description: 'Started my Diploma in Computer Science & Technology to learn programming and mobile app development.',
       type: 'milestone'
     }
-
   ]
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <section id="about" className="py-20 bg-gray-200/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -82,14 +75,14 @@ export function About() {
                 className="relative"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/20 to-accent/20 p-2">
+              ><div className="aspect-square rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/20 to-accent/20 p-2">
                   <ImageWithFallback
-                    src="dummy-profile-image-male.jpg"
+                    src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                     alt="Saleh Akram Sifat"
                     className="w-full h-full object-cover rounded-xl"
                   />
                 </div>
+
                 {/* Floating badges */}
                 <motion.div
                   className="absolute -top-4 -right-4"
@@ -175,8 +168,11 @@ export function About() {
                 >
                   {/* Timeline dot */}
                   <motion.div
-                    className={`absolute left-4 w-4 h-4 rounded-full border-2 border-background ${item.type === 'work' ? 'bg-primary' :
-                      item.type === 'education' ? 'bg-accent' : 'bg-secondary'
+                    className={`absolute left-4 w-4 h-4 rounded-full border-2 border-background ${item.type === 'work'
+                      ? 'bg-primary'
+                      : item.type === 'education'
+                        ? 'bg-accent'
+                        : 'bg-secondary'
                       }`}
                     whileHover={{ scale: 1.2 }}
                     transition={{ type: "spring", stiffness: 300 }}

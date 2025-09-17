@@ -1,8 +1,8 @@
-import { motion } from 'motion/react'
-import { useEffect, useState } from 'react'
-import { Code, Database, Smartphone, GitBranch } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
-import { Badge } from './ui/badge'
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { Code, Database, Smartphone, GitBranch } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Badge } from './ui/badge';
 
 // custom counter hook
 function useCounter(target: number, duration = 2000) {
